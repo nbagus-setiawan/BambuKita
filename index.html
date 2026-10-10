@@ -7,11 +7,11 @@
   <meta name="description" content="Profil Korporasi PT Bambu Kita. Produsen resmi dan penyedia peralatan dapur anyaman bambu food-grade untuk jaringan hotel, restoran modern, kafe, dan industri kuliner nusantara.">
   <meta name="theme-color" content="#fbf9f5">
   <script>
-    /* Inisialisasi tema sebelum render untuk mencegah kedipan tampilan */
+    /* Inisialisasi tema sebelum render: default selalu mode terang (light) */
     (function () {
       var d = document.documentElement; d.classList.add("js");
-      var t; try { t = JSON.parse(localStorage.getItem("bk-theme")); } catch (e) {}
-      if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      var t; try { t = JSON.parse(localStorage.getItem("bk-theme-user")); } catch (e) {}
+      if (t !== "dark" && t !== "light") t = "light";
       d.dataset.theme = t;
     })();
   </script>
