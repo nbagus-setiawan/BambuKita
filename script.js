@@ -1,11 +1,5 @@
-/* ==========================================================
-   PT Bambu Nusantara Kita — script.js
-   Modern Corporate & B2B Procurement Engine
-   ========================================================== */
+const WA_NUMBER = "6285188906264";
 
-/* Nomor WhatsApp resmi procurement & kemitraan (format internasional 62, tanpa + dan spasi) */
-const WA_NUMBER = "6281234567890";
-/* Minimal pcs per produk agar harga grosir B2B berlaku otomatis */
 const GROSIR_MIN = 50;
 
 const $ = (s, r = document) => r.querySelector(s);
@@ -87,8 +81,8 @@ const PRODUCTS = [
 /* ---------- FAQ Perusahaan ---------- */
 const FAQ = [
   [
-    "Apa profil dan legalitas operasional PT Bambu Nusantara Kita?",
-    "PT Bambu Nusantara Kita (BambuKita) adalah entitas manufaktur dan agregator pasokan anyaman bambu legal berbadan hukum Indonesia. Kami beroperasi sebagai mitra langsung sentra pengrajin binaan untuk mendistribusikan produk alat saji food-grade berkualitas ke jaringan hotel, restoran, katering, dan ritel modern berskala nasional."
+    "Apa profil dan legalitas operasional PT Bambu Kita?",
+    "PT Bambu Kita (BambuKita) adalah entitas manufaktur dan agregator pasokan anyaman bambu legal berbadan hukum Indonesia. Kami beroperasi sebagai mitra langsung sentra pengrajin binaan untuk mendistribusikan produk alat saji food-grade berkualitas ke jaringan hotel, restoran, katering, dan ritel modern berskala nasional."
   ],
   [
     "Bagaimana jaminan kualitas mutu food-grade dan kebersihan produk?",
@@ -316,7 +310,7 @@ function updateCard(card) {
     row.hidden = true;
     addBtn.querySelector("span").textContent = "Inquiry Ukuran Custom";
     addBtn.firstElementChild.className = "bi bi-whatsapp";
-    wa.href = waLink(`Halo PT Bambu Nusantara Kita, saya ingin mengajukan penawaran custom untuk: ${p.nama} (${s[0]}).`);
+    wa.href = waLink(`Halo PT Bambu  Kita, saya ingin mengajukan penawaran custom untuk: ${p.nama} (${s[0]}).`);
     return;
   }
   const gro = qty >= GROSIR_MIN;
@@ -328,7 +322,7 @@ function updateCard(card) {
   $(".sub", row).innerHTML = `Subtotal: <b>${rupiah(unitFor(s, qty) * qty)}</b>${gro ? ' <span class="tier">&middot; Tarif Grosir B2B</span>' : ""}`;
   addBtn.querySelector("span").textContent = "Tambah ke Keranjang";
   addBtn.firstElementChild.className = "bi bi-bag-plus";
-  wa.href = waLink(`Halo PT Bambu Nusantara Kita, saya ingin memesan produk: ${p.nama} (${s[0]}) sebanyak ${qty} pcs.`);
+  wa.href = waLink(`Halo PT Bambu Kita, saya ingin memesan produk: ${p.nama} (${s[0]}) sebanyak ${qty} pcs.`);
 }
 
 function visibleProducts() {
@@ -390,7 +384,7 @@ grid.addEventListener("click", (e) => {
     const pi = +card.dataset.pi, si = +card.dataset.si;
     const p = PRODUCTS[pi], s = p.sizes[si];
     if (s[1] == null) {
-      window.open(waLink(`Halo PT Bambu Nusantara Kita, saya ingin mengajukan penawaran custom: ${p.nama} (${s[0]}).`), "_blank", "noopener");
+      window.open(waLink(`Halo PT Bambu Kita, saya ingin mengajukan penawaran custom: ${p.nama} (${s[0]}).`), "_blank", "noopener");
       return;
     }
     const qty = Math.max(1, parseInt($(".qty input", card).value, 10) || 1);
@@ -675,7 +669,7 @@ $$("form.form").forEach((form) => {
    Tautan WhatsApp Umum & Tahun Hak Cipta
    ========================================================== */
 $$("[data-wa]").forEach((a) => {
-  a.href = waLink(a.dataset.msg || "Halo PT Bambu Nusantara Kita, saya ingin berkonsultasi mengenai pengadaan peralatan dapur anyaman bambu.");
+  a.href = waLink(a.dataset.msg || "Halo PT Bambu Kita, saya ingin berkonsultasi mengenai pengadaan peralatan dapur anyaman bambu.");
   a.target = "_blank"; a.rel = "noopener";
 });
 $("#year").textContent = new Date().getFullYear();
