@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>PT Bambu Nusantara Kita — Manufaktur &amp; Pasokan Peralatan Dapur Bambu Berkelanjutan</title>
+  <meta name="description" content="Profil Korporasi PT Bambu Nusantara Kita. Produsen resmi dan penyedia peralatan dapur anyaman bambu food-grade untuk jaringan hotel, restoran modern, kafe, dan industri kuliner nusantara.">
+  <meta name="theme-color" content="#fbf9f5">
+  <script>
+    /* Inisialisasi tema sebelum render untuk mencegah kedipan tampilan */
+    (function () {
+      var d = document.documentElement; d.classList.add("js");
+      var t; try { t = JSON.parse(localStorage.getItem("bk-theme")); } catch (e) {}
+      if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      d.dataset.theme = t;
+    })();
+  </script>
+  <link rel="icon" type="image/png" href="img/logo-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+<a class="skip" href="#produk">Lewati ke katalog produk</a>
+
+<!-- ================= MAIN HEADER ================= -->
+<header class="header" id="nav">
+  <div class="container header__inner">
+    <a class="brand" href="#beranda" aria-label="PT Bambu Nusantara Kita, beranda utama">
+      <span class="brand__symbol">
+        <img src="img/logo-icon.png" alt="Logo BambuKita" width="38" height="38">
+      </span>
+      <span class="brand__copy">
+        <span class="brand__name">BAMBUKITA</span>
+        <span class="brand__sub">PT Bambu Nusantara Kita</span>
+      </span>
+    </a>
+
+    <nav id="menu" class="nav__menu" aria-label="Navigasi korporasi">
+      <a href="#beranda" class="is-active">Beranda</a>
+      <a href="#tentang">Profil</a>
+      <a href="#kolaborasi">Rantai Pasok</a>
+      <a href="#produk">Katalog</a>
+      <a href="#manfaat">Dampak ESG</a>
+      <a href="#skema">Kerjasama</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn--primary btn--sm nav__drawer-cta" href="#konsultasi">Konsultasi B2B</a>
+    </nav>
+
+    <div class="header__actions">
+      <div class="nav__tools">
+        <button class="iconbtn" id="themeBtn" type="button" aria-label="Ganti mode visual" title="Ganti mode visual">
+          <i class="bi bi-moon-stars theme-moon" aria-hidden="true"></i>
+          <i class="bi bi-sun theme-sun" aria-hidden="true"></i>
+        </button>
+        <button class="iconbtn cartbtn" id="cartBtn" type="button" aria-label="Buka daftar pesanan dan checkout" aria-expanded="false" aria-controls="drawer">
+          <i class="bi bi-bag" aria-hidden="true"></i>
+          <span class="cartbtn__label">Pesanan</span>
+          <span class="cartbtn__badge" id="cartBadge" hidden>0</span>
+        </button>
+        <button class="iconbtn nav__toggle" id="navToggle" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="menu">
+          <i class="bi bi-list" aria-hidden="true"></i>
+        </button>
+      </div>
+      <a class="btn btn--primary btn--sm header__cta" href="#konsultasi">Inquiry Pengadaan</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section id="beranda" class="hero">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero__grid">
+      <div class="hero__editorial">
+        <div class="meta-tag">
+          <span class="meta-tag__dot"></span>
+          <span>Manufaktur Anyaman Berkelanjutan &middot; Est. Nusantara</span>
+        </div>
+        <h1 class="hero__title">
+          Keahlian Anyaman Tradisi.<br>
+          <em>Presisi untuk Industri Kuliner Modern.</em>
+        </h1>
+        <p class="hero__lead">
+          PT Bambu Nusantara Kita menghubungkan keahlian luhur perajin desa dengan standar higienis industri F&amp;B. Kami memproduksi dan memasok peralatan dapur anyaman bambu food-grade dengan keseragaman dimensi, kapasitas pasokan puluhan ribu unit, dan transparansi harga langsung pabrik.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" href="#produk">
+            Jelajahi Katalog B2B <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+          </a>
+          <a class="btn btn--outline btn--lg" href="#konsultasi">
+            Inquiry Pengadaan Korporat
+          </a>
+          <a class="btn btn--ghost btn--lg" data-wa href="#">
+            <i class="bi bi-whatsapp" aria-hidden="true"></i> Hotline B2B
+          </a>
+        </div>
+
+        <div class="hero__specs-bar">
+          <div class="spec-col">
+            <span class="spec-col__label">Standar Kontak</span>
+            <span class="spec-col__val"><i class="bi bi-shield-check" aria-hidden="true"></i> Food-Grade Alami</span>
+          </div>
+          <div class="spec-col">
+            <span class="spec-col__label">Sistem Pengeringan</span>
+            <span class="spec-col__val"><i class="bi bi-fire" aria-hidden="true"></i> Pengasapan &amp; Kiln</span>
+          </div>
+          <div class="spec-col">
+            <span class="spec-col__label">Kapasitas Pasokan</span>
+            <span class="spec-col__val"><i class="bi bi-box-seam" aria-hidden="true"></i> 25.000 Unit / Bln</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__stage">
+        <div class="hero__showcase">
+          <div class="hero__media-wrapper">
+            <img src="img/hero.png" alt="Set Wadah Saji Anyaman Bambu PT Bambu Nusantara Kita" loading="eager" onerror="this.src='image copy 4.png'">
+            <div class="hero__badge-floating">
+              <span class="hero__badge-dot"></span>
+              <span>Koleksi Utama: Set Cloche Saji Bambu</span>
+            </div>
+          </div>
+          <div class="hero__gallery-strip">
+            <a href="#produk" class="hero__gallery-thumb" title="Piring Anyaman Bambu">
+              <img src="img/piring.png" alt="Piring Anyaman">
+              <span>Piring Saji</span>
+            </a>
+            <a href="#produk" class="hero__gallery-thumb" title="Bakul Nasi Bambu">
+              <img src="img/bakul.png" alt="Bakul Nasi">
+              <span>Bakul Nasi</span>
+            </a>
+            <a href="#produk" class="hero__gallery-thumb" title="Nampan Tampah">
+              <img src="img/nampan.png" alt="Nampan Tampah">
+              <span>Tampah Saji</span>
+            </a>
+            <a href="#produk" class="hero__gallery-thumb" title="Sendok Centong Cutlery">
+              <img src="img/sendok.png" alt="Sendok Centong">
+              <span>Alat Makan</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Corporate Metrics Row -->
+  <div class="container">
+    <div class="metrics-grid reveal">
+      <div class="metric-item">
+        <span class="metric-item__num" data-count="120" data-suffix="+">120+</span>
+        <span class="metric-item__title">Pengrajin Desa Binaan</span>
+        <p class="metric-item__desc">Sentra penganyam terverifikasi di sentra pedesaan Jawa Barat.</p>
+      </div>
+      <div class="metric-item">
+        <span class="metric-item__num" data-count="25000" data-suffix="/bln">25.000/bln</span>
+        <span class="metric-item__title">Kapasitas Produksi</span>
+        <p class="metric-item__desc">Kesiapan pasokan skala besar untuk kontrak jaringan restoran &amp; hotel.</p>
+      </div>
+      <div class="metric-item">
+        <span class="metric-item__num" data-count="100" data-suffix="%">100%</span>
+        <span class="metric-item__title">Food-Grade Alami</span>
+        <p class="metric-item__desc">Bebas bahan kimia berbahaya, klorin pemutih, dan pernis sintetis.</p>
+      </div>
+      <div class="metric-item">
+        <span class="metric-item__num" data-count="34" data-suffix="+">34+</span>
+        <span class="metric-item__title">Provinsi Pengiriman</span>
+        <p class="metric-item__desc">Kemitraan kargo terpercaya dengan jaminan keselamatan barang.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Corporate Sectors / Client Trust Bar -->
+  <div class="container">
+    <div class="sectors-bar reveal">
+      <span class="sectors-bar__title">Sektor Kemitraan Industri:</span>
+      <div class="sectors-bar__list">
+        <span class="sector-tag"><i class="bi bi-buildings" aria-hidden="true"></i> Hotel &amp; Resor Bintang</span>
+        <span class="sector-tag"><i class="bi bi-cup-hot" aria-hidden="true"></i> Restoran Tradisional &amp; Modern</span>
+        <span class="sector-tag"><i class="bi bi-box-seam" aria-hidden="true"></i> Katering Korporat &amp; Jamuan</span>
+        <span class="sector-tag"><i class="bi bi-shop" aria-hidden="true"></i> Kafe Berkelanjutan</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARQUEE TICKER ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span><i class="bi bi-tree-fill"></i> 100% Bambu Alami Berkelanjutan</span>
+    <span><i class="bi bi-patch-check"></i> Bebas Pemutih Klorin &amp; Pernis Kimia</span>
+    <span><i class="bi bi-diagram-3"></i> Rantai Pasok Terstandardisasi Nasional</span>
+    <span><i class="bi bi-cash-stack"></i> Harga Grosir B2B Langsung Pabrik</span>
+    <span><i class="bi bi-truck"></i> Jaminan Garansi Pengiriman Kargo</span>
+    <span><i class="bi bi-receipt"></i> Faktur &amp; Dokumen Korporasi Resmi</span>
+    <span><i class="bi bi-tree-fill"></i> 100% Bambu Alami Berkelanjutan</span>
+    <span><i class="bi bi-patch-check"></i> Bebas Pemutih Klorin &amp; Pernis Kimia</span>
+    <span><i class="bi bi-diagram-3"></i> Rantai Pasok Terstandardisasi Nasional</span>
+    <span><i class="bi bi-cash-stack"></i> Harga Grosir B2B Langsung Pabrik</span>
+    <span><i class="bi bi-truck"></i> Jaminan Garansi Pengiriman Kargo</span>
+    <span><i class="bi bi-receipt"></i> Faktur &amp; Dokumen Korporasi Resmi</span>
+  </div>
+</div>
+
+<!-- ================= TENTANG / COMPANY PROFILE ================= -->
+<section id="tentang" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Profil Perusahaan &amp; Fondasi Nilai</span>
+      <h2 class="section-title">Solusi Manufaktur Anyaman Ramah Lingkungan Skala Korporasi</h2>
+      <p class="section-lead">
+        BambuKita didirikan untuk melestarikan kearifan lokal anyaman tangan Nusantara sekaligus mentransformasikannya menjadi rantai pasok industri modern yang higienis, teratur, dan berkeadilan ekonomi.
+      </p>
+    </div>
+
+    <div class="editorial-grid">
+      <article class="story-card story-card--featured reveal">
+        <div class="story-card__content">
+          <span class="badge badge--brand"><i class="bi bi-gem" aria-hidden="true"></i> Komitmen ESG &amp; Fair Trade</span>
+          <h3>Pemberdayaan Berkelanjutan untuk Kemandirian Sentra Desa</h3>
+          <p>
+            Kami memutus rantai tengkulak bertingkat yang kerap menekan posisi tawar pengrajin. Dengan penetapan harga beli yang adil, pelatihan standarisasi mutu, dan kepastian kuota produksi rutin bulanan, kami membina lebih dari 120 kepala keluarga pengrajin untuk bertumbuh secara mandiri.
+          </p>
+          <div class="story-card__facts">
+            <div>
+              <strong>Upah Adil</strong>
+              <span>Transparansi tanpa potongan tengkulak bertingkat</span>
+            </div>
+            <div>
+              <strong>Substitusi Plastik</strong>
+              <span>Alternatif alami yang dapat terurai ramah lingkungan</span>
+            </div>
+          </div>
+        </div>
+        <div class="story-card__figure">
+          <img src="img/wadah.png" alt="Wadah Saji Bambu Berpenutup PT Bambu Nusantara Kita" loading="lazy" onerror="this.src='image copy 4.png'">
+          <span class="story-card__caption">Set Cloche Wadah Saji Anyaman Presisi</span>
+        </div>
+      </article>
+
+      <div class="story-stack">
+        <article class="spec-card reveal" style="--d:.1s">
+          <div class="spec-card__header">
+            <span class="spec-icon"><i class="bi bi-shield-check" aria-hidden="true"></i></span>
+            <div>
+              <h3>Standar Mutu Food-Grade &amp; Pengasapan Alami</h3>
+              <span class="spec-sub">Higienitas Kontak Pangan Tanpa Zat Kimia Sintetis</span>
+            </div>
+          </div>
+          <p>
+            Bilah bambu diproses melalui metode pengasapan sabut kelapa tradisional dan pengeringan ruang kiln terukur. Proses ini mensterilkan pati bambu dari risiko jamur dan kutu tanpa meninggalkan residu berbahaya.
+          </p>
+          <div class="spec-thumb">
+            <img src="img/piring.png" alt="Piring Anyaman Bambu Higienis" loading="lazy" onerror="this.src='image.png'">
+            <span>Inspeksi kerapian anyaman dan kehalusan tepian piring saji</span>
+          </div>
+        </article>
+
+        <article class="spec-card reveal" style="--d:.2s">
+          <div class="spec-card__header">
+            <span class="spec-icon spec-icon--dark"><i class="bi bi-diagram-3-fill" aria-hidden="true"></i></span>
+            <div>
+              <h3>Manajemen Gudang Terpusat &amp; Pasokan Terjadwal</h3>
+              <span class="spec-sub">Efisiensi Pengadaan Skala Jaringan Multi-Cabang</span>
+            </div>
+          </div>
+          <p>
+            Fasilitas kurasi dan gudang sentral kami memastikan keseragaman dimensi produk, penyortiran ketat, serta kesiapan stok reguler untuk pengiriman rutin jaringan restoran dan perhotelan di berbagai kota.
+          </p>
+          <div class="spec-thumb">
+            <img src="img/sendok.png" alt="Sendok &amp; Centong Bambu Standar Ekspor" loading="lazy" onerror="this.src='image copy 5.png'">
+            <span>Perlengkapan alat makan dan masak bambu berpenyelesaian halus</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WORKFLOW / RANTAI PASOK ================= -->
+<section id="kolaborasi" class="section section--tint">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Alur Kerja Sama &amp; Rantai Pasok Terintegrasi</span>
+      <h2 class="section-title">Dari Sanggar Desa Hingga Meja Saji Bisnis Anda</h2>
+      <p class="section-lead">
+        Tiga fase alur terstandarisasi yang menjamin integritas mutu produk, transparansi biaya, dan ketepatan waktu pengiriman.
+      </p>
+    </div>
+
+    <div class="timeline-grid">
+      <div class="timeline-step reveal">
+        <span class="timeline-step__num">01</span>
+        <div class="timeline-step__body">
+          <span class="timeline-step__badge">Fase Produksi Desa</span>
+          <h3>Standardisasi Cetakan &amp; Anyaman</h3>
+          <p>
+            Kelompok pengrajin desa binaan menganyam bambu sesuai dengan spesifikasi dimensi cetakan baku dan ketebalan bilah yang telah diverifikasi oleh tim teknis BambuKita.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-step reveal" style="--d:.1s">
+        <span class="timeline-step__num">02</span>
+        <div class="timeline-step__body">
+          <span class="timeline-step__badge">Fase Kurasi Sentral</span>
+          <h3>Inspeksi Mutu &amp; Uji Sterilisasi</h3>
+          <p>
+            Setiap unit diperiksa di fasilitas sentral: pengujian kekeringan serat, eliminasi serat lepas, perlakuan sterilisasi food-grade, serta pengemasan protektif berlapis.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-step reveal" style="--d:.2s">
+        <span class="timeline-step__num">03</span>
+        <div class="timeline-step__body">
+          <span class="timeline-step__badge">Fase Distribusi B2B</span>
+          <h3>Logistik Kargo &amp; Garansi Tiba</h3>
+          <p>
+            Pesanan diberangkatkan melalui armada kargo resmi menuju gudang atau cabang restoran Anda, dilengkapi nomor pelacakan resi serta jaminan penggantian jika terjadi kerusakan saat transit.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DAMPAK & NILAI TAMBAH ================= -->
+<section id="manfaat" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Nilai Tambah Kolaborasi</span>
+      <h2 class="section-title">Ekosistem Kemitraan Saling Menguntungkan</h2>
+      <p class="section-lead">
+        Keseimbangan antara peningkatan kesejahteraan pengrajin pedesaan dengan efisiensi dan estetika operasional pelaku bisnis F&amp;B.
+      </p>
+    </div>
+
+    <div class="comparison-grid">
+      <div class="partner-panel reveal">
+        <div class="partner-panel__head">
+          <span class="partner-panel__icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+          <div>
+            <span class="partner-panel__tag">Pemberdayaan Produsen</span>
+            <h3>Untuk Pengrajin Mitra Desa</h3>
+          </div>
+        </div>
+        <ul class="spec-list">
+          <li>
+            <i class="bi bi-check2" aria-hidden="true"></i>
+            <span><strong>Akses Pasar Tanpa Perantara:</strong> Penjualan langsung ke sektor industri modern dengan harga pembelian yang layak dan transparan.</span>
+          </li>
+          <li>
+            <i class="bi bi-check2" aria-hidden="true"></i>
+            <span><strong>Kepastian Serapan Produksi:</strong> Kontrak pesanan rutin terjadwal yang menjamin kestabilan pendapatan kelompok perajin.</span>
+          </li>
+          <li>
+            <i class="bi bi-check2" aria-hidden="true"></i>
+            <span><strong>Edukasi Teknis &amp; Visual:</strong> Pendampingan proses pengeringan higienis, standarisasi cetakan ukuran, dan dokumentasi katalog resmi.</span>
+          </li>
+          <li>
+            <i class="bi bi-check2" aria-hidden="true"></i>
+            <span><strong>Perlindungan Usaha:</strong> Sistem pembayaran tepat waktu tanpa potongan sepihak.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="partner-panel partner-panel--accent reveal" style="--d:.1s">
+        <div class="partner-panel__head">
+          <span class="partner-panel__icon"><i class="bi bi-buildings" aria-hidden="true"></i></span>
+          <div>
+            <span class="partner-panel__tag">Pengadaan Korporasi</span>
+            <h3>Untuk Klien Restoran &amp; Horeka</h3>
+          </div>
+        </div>
+        <ul class="spec-list">
+          <li>
+            <i class="bi bi-check2" aria-hidden="true"></i>
+            <span><strong>Keseragaman Mutu &amp; Ukuran:</strong> Dimensi presisi terstandarisasi yang konsisten untuk kenyamanan penyajian menu cabang restoran.</span>
+          </li>
+          <li>
+            <i class="bi bi-check2" aria-hidden="true"></i>
+            <span><strong>Struktur Harga Grosir Pabrik:</strong> Hemat 15% hingga 20% untuk pemesanan mulai dari 50 unit per produk.</span>
+          </li>
+          <li>
+            <i class="bi bi-check2" aria-hidden="true"></i>
+            <span><strong>Fasilitas Custom Branding:</strong> Layanan logo cap bakar atau laser engraving identitas brand restoran pada wadah saji (min. 100 pcs).</span>
+          </li>
+          <li>
+            <i class="bi bi-check2" aria-hidden="true"></i>
+            <span><strong>Legalitas &amp; Dokumen Resmi:</strong> Dukungan invoice resmi, faktur perusahaan, dan perjanjian pasokan berkala.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KATALOG PRODUK B2B ================= -->
+<section id="produk" class="section section--tint">
+  <div class="container">
+    <div class="catalog-header reveal">
+      <div>
+        <span class="section-eyebrow">Katalog Terkurasi &amp; Pengadaan B2B</span>
+        <h2 class="section-title">Lini Produk Peralatan Dapur Anyaman Bambu</h2>
+        <p class="section-lead">
+          Pilih ukuran dan tentukan jumlah unit. Sistem katalog menghitung harga secara otomatis, termasuk potongan grosir B2B untuk pesanan &ge; 50 unit per produk. Tambahkan ke keranjang untuk membuat rincian Purchase Order ke WhatsApp.
+        </p>
+      </div>
+    </div>
+
+    <!-- Search & Filter Controls -->
+    <div class="filter-bar reveal">
+      <label class="search-input">
+        <i class="bi bi-search" aria-hidden="true"></i>
+        <input id="q" type="search" placeholder="Cari nama produk, misal: piring, bakul, tampah" autocomplete="off" aria-label="Cari nama produk">
+      </label>
+      <div class="category-chips" id="chips" role="group" aria-label="Filter kategori produk"></div>
+      <label class="sort-select">
+        <i class="bi bi-arrow-down-up" aria-hidden="true"></i>
+        <select id="sort" aria-label="Urutkan produk berdasarkan harga atau nama">
+          <option value="rec">Rekomendasi Pabrik</option>
+          <option value="asc">Harga: Terendah ke Tertinggi</option>
+          <option value="desc">Harga: Tertinggi ke Terendah</option>
+          <option value="az">Nama Produk (A–Z)</option>
+        </select>
+      </label>
+    </div>
+
+    <p class="catalog-result" id="result" aria-live="polite"></p>
+
+    <!-- Product Grid Generated by JS -->
+    <div id="productGrid" class="catalog-grid"></div>
+
+    <div class="empty-state" id="empty" hidden>
+      <i class="bi bi-search" aria-hidden="true"></i>
+      <h3>Produk Tidak Ditemukan</h3>
+      <p>Tidak ada produk yang cocok dengan kata kunci pencarian. Silakan reset filter atau hubungi tim pengadaan kami.</p>
+      <button class="btn btn--outline" id="resetFilter" type="button">Reset Pencarian</button>
+    </div>
+
+    <div class="quality-notice reveal">
+      <i class="bi bi-info-circle" aria-hidden="true"></i>
+      <div>
+        <strong>Catatan Karakteristik Alami &amp; Jaminan Mutu:</strong>
+        <p>Seluruh produk dianyam secara cermat menggunakan serat bambu alami terpilih. Sedikit variasi warna serat dan toleransi dimensi mikro (&plusmn;0.5 cm) adalah ciri orisinalitas anyaman tangan, dengan kerapian dan standar keamanan pangan tetap terjamin melalui 3 tahap inspeksi mutu pabrik.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KONSULTASI & FORMULIR PENGADAAN ================= -->
+<section id="konsultasi" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Layanan Konsultasi &amp; Kemitraan</span>
+      <h2 class="section-title">Inquiry Kebutuhan Pengadaan &amp; Kerja Sama</h2>
+      <p class="section-lead">
+        Pilih peran kemitraan Anda untuk mendapatkan kalkulasi estimasi volume, rekomendasi spesifikasi, dan surat penawaran harga grosir terbaik secara gratis.
+      </p>
+    </div>
+
+    <div class="consultation-tabs" role="tablist" aria-label="Pilih peran kemitraan">
+      <button role="tab" id="tab-seller" aria-selected="true" aria-controls="panel-seller">
+        <i class="bi bi-shop" aria-hidden="true"></i> Saya Pengrajin / Mitra Desa
+      </button>
+      <button role="tab" id="tab-buyer" aria-selected="false" aria-controls="panel-buyer" tabindex="-1">
+        <i class="bi bi-buildings" aria-hidden="true"></i> Saya Pembeli Bisnis (Restoran / Hotel / Katering)
+      </button>
+    </div>
+
+    <!-- Panel Pengrajin -->
+    <div class="consult-panel" id="panel-seller" role="tabpanel" aria-labelledby="tab-seller">
+      <div class="consult-panel__info">
+        <span class="badge badge--warm">Kemitraan Sentra Perajin Desa</span>
+        <h3>Punya Produk Kerajinan Bambu? Mari Dipasarkan Bersama ke Tingkat Nasional.</h3>
+        <p>Banyak pengrajin memiliki keahlian luar biasa namun menghadapi kendala penentuan struktur harga, standarisasi foto katalog, jangkauan pasar, dan logistik partai besar. PT Bambu Nusantara Kita siap mendampingi sanggar Anda.</p>
+        
+        <h4>Topik Konsultasi Kemitraan:</h4>
+        <ul class="spec-list spec-list--compact">
+          <li><i class="bi bi-check2" aria-hidden="true"></i><span>Spesifikasi model anyaman yang diminati jaringan restoran dan hotel modern.</span></li>
+          <li><i class="bi bi-check2" aria-hidden="true"></i><span>Kalkulasi struktur harga jual yang adil dan menguntungkan bagi perajin.</span></li>
+          <li><i class="bi bi-check2" aria-hidden="true"></i><span>Standar finishing bebas kimia dan proses pengasapan alami food-grade.</span></li>
+          <li><i class="bi bi-check2" aria-hidden="true"></i><span>Fasilitas pemotretan produk dan integrasi ke katalog korporasi resmi.</span></li>
+        </ul>
+
+        <h4>Tahapan Integrasi Mitra:</h4>
+        <div class="step-chips">
+          <span>1. Pengisian Form</span>
+          <span>2. Verifikasi Lapangan</span>
+          <span>3. Kurasi Sampel</span>
+          <span>4. Masuk Katalog</span>
+        </div>
+      </div>
+
+      <form class="consult-form" data-role="Pengerajin" novalidate>
+        <h3>Formulir Mitra Pengrajin Desa</h3>
+        <label>
+          Nama Lengkap Pengrajin / Pengelola
+          <input name="nama" type="text" placeholder="Contoh: Pak Darmanto" required autocomplete="name">
+        </label>
+        <div class="form-row">
+          <label>
+            Nama Kelompok Anyam / UMKM
+            <input name="kelompok" type="text" placeholder="Contoh: Sanggar Bambu Lestari">
+          </label>
+          <label>
+            Desa &amp; Kota Asal
+            <input name="asal" type="text" placeholder="Contoh: Cianjur, Jawa Barat" required>
+          </label>
+        </div>
+        <div class="form-row">
+          <label>
+            Jenis Kerajinan Bambu
+            <input name="produk" type="text" placeholder="Piring lidi, bakul nasi, nampan, dll" required>
+          </label>
+          <label>
+            Kapasitas Produksi per Bulan
+            <input name="kapasitas" type="text" placeholder="Misal: 500 pcs/bulan">
+          </label>
+        </div>
+        <label>
+          Nomor WhatsApp Aktif
+          <input name="wa" type="tel" inputmode="tel" placeholder="08xxxxxxxxxx" required pattern="[0-9+\s\-]{9,16}" autocomplete="tel">
+        </label>
+        <label>
+          Deskripsi Singkat &amp; Kebutuhan Dukungan
+          <textarea name="cerita" rows="3" placeholder="Ceritakan kapasitas kelompok Anda dan produk anyaman yang ingin dipasarkan."></textarea>
+        </label>
+        <button class="btn btn--primary btn--block btn--lg" type="submit">
+          <i class="bi bi-whatsapp" aria-hidden="true"></i> Kirim &amp; Teruskan ke WhatsApp Tim Kemitraan
+        </button>
+        <small class="form-disclaimer">Konsultasi 100% bebas biaya dan tanpa kewajiban. Tim kemitraan lapangan kami akan menghubungi nomor Anda.</small>
+      </form>
+    </div>
+
+    <!-- Panel Pembeli B2B -->
+    <div class="consult-panel" id="panel-buyer" role="tabpanel" aria-labelledby="tab-buyer" hidden>
+      <div class="consult-panel__info">
+        <span class="badge badge--brand">Pengadaan B2B Industri Kuliner &amp; Horeka</span>
+        <h3>Kebutuhan Peralatan Saji Skala Usaha? Kami Siapkan Solusi Pasokan Terpercaya.</h3>
+        <p>Dari pengadaan pembukaan cabang baru, peremajaan perlengkapan saji hotel, hingga suvenir korporat ramah lingkungan. Dapatkan rekomendasi spesifikasi teknis dan penawaran harga grosir pabrik.</p>
+        
+        <h4>Topik Konsultasi Pengadaan:</h4>
+        <ul class="spec-list spec-list--compact">
+          <li><i class="bi bi-check2" aria-hidden="true"></i><span>Kesesuaian model dan ukuran alat saji dengan konsep plating menu restoran Anda.</span></li>
+          <li><i class="bi bi-check2" aria-hidden="true"></i><span>Kalkulasi volume pengadaan rutin dan diskon harga grosir bertingkat.</span></li>
+          <li><i class="bi bi-check2" aria-hidden="true"></i><span>Kustomisasi branding: cap bakar atau laser engraving logo perusahaan pada bambu.</span></li>
+          <li><i class="bi bi-check2" aria-hidden="true"></i><span>Jadwal pengiriman bertahap, pemilihan kargo hemat, dan penerbitan invoice resmi.</span></li>
+        </ul>
+
+        <h4>Tahapan Pengadaan B2B:</h4>
+        <div class="step-chips">
+          <span>1. Form Kebutuhan</span>
+          <span>2. Surat Penawaran</span>
+          <span>3. Sampel Uji Coba</span>
+          <span>4. Produksi &amp; Logistik</span>
+        </div>
+      </div>
+
+      <form class="consult-form" data-role="Pembeli" novalidate>
+        <h3>Formulir Pengadaan Klien Bisnis (B2B)</h3>
+        <label>
+          Nama Lengkap PIC / Pemohon
+          <input name="nama" type="text" placeholder="Contoh: Ibu Sari Dewi" required autocomplete="name">
+        </label>
+        <div class="form-row">
+          <label>
+            Nama Perusahaan / Restoran / Brand
+            <input name="usaha" type="text" placeholder="Contoh: Resto Nusantara Rasa">
+          </label>
+          <label>
+            Kota Tujuan Pengiriman
+            <input name="asal" type="text" placeholder="Contoh: Jakarta Selatan" required>
+          </label>
+        </div>
+        <div class="form-row">
+          <label>
+            Produk Bambu yang Dicari
+            <input name="produk" type="text" placeholder="Piring saji, bakul nasi, wadah tutup" required>
+          </label>
+          <label>
+            Perkiraan Volume Pengadaan
+            <input name="kapasitas" type="text" placeholder="Misal: 300 pcs">
+          </label>
+        </div>
+        <label>
+          Nomor WhatsApp PIC
+          <input name="wa" type="tel" inputmode="tel" placeholder="08xxxxxxxxxx" required pattern="[0-9+\s\-]{9,16}" autocomplete="tel">
+        </label>
+        <label>
+          Spesifikasi Khusus / Kebutuhan Tambahan
+          <textarea name="cerita" rows="3" placeholder="Misal: kebutuhan logo cap bakar, tenggat waktu pembukaan cabang, atau dimensi khusus."></textarea>
+        </label>
+        <button class="btn btn--primary btn--block btn--lg" type="submit">
+          <i class="bi bi-whatsapp" aria-hidden="true"></i> Kirim &amp; Dapatkan Penawaran B2B Resmi
+        </button>
+        <small class="form-disclaimer">Konsultasi dan penawaran resmi gratis. Tim procurement kami merespons dalam hitungan menit.</small>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKEMA KERJASAMA & PEMESANAN ================= -->
+<section id="skema" class="section section--tint">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Skema Fleksibel &amp; Transparan</span>
+      <h2 class="section-title">Struktur Pemesanan &amp; Perbandingan Layanan</h2>
+      <p class="section-lead">
+        Mendukung pembelian sampel eceran untuk uji plating hingga pengadaan partai besar bersubsidi pabrik.
+      </p>
+    </div>
+
+    <div class="table-container reveal">
+      <table class="corporate-table">
+        <thead>
+          <tr>
+            <th scope="col">Parameter Layanan</th>
+            <th scope="col">Pesanan Eceran &amp; Sampel</th>
+            <th scope="col" class="table-highlight">Partai Besar / Grosir B2B</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Peruntukan</th>
+            <td>Uji coba plating menu, keperluan rumah tangga, kado hampers keluarga.</td>
+            <td class="table-highlight">Restoran, jaringan hotel, wedding organizer, kafe, dan katering korporat.</td>
+          </tr>
+          <tr>
+            <th scope="row">Minimal Order (MOQ)</th>
+            <td>Mulai dari 1 unit per produk.</td>
+            <td class="table-highlight">Mulai 50 unit per produk (dapat kombinasi ukuran per selusin).</td>
+          </tr>
+          <tr>
+            <th scope="row">Skema Harga</th>
+            <td>Harga reguler tertera di katalog resmi.</td>
+            <td class="table-highlight">Harga grosir bersubsidi resmi pabrik (hemat 15% hingga 20%).</td>
+          </tr>
+          <tr>
+            <th scope="row">Waktu Pengerjaan</th>
+            <td>3–7 hari kerja (ready stock gudang sentral).</td>
+            <td class="table-highlight">7–21 hari kerja (disesuaikan dengan volume antrean sanggar).</td>
+          </tr>
+          <tr>
+            <th scope="row">Custom Laser / Cap Logo</th>
+            <td>Belum tersedia untuk pesanan satuan.</td>
+            <td class="table-highlight">Tersedia cap/laser logo (min. 100 pcs), Rp 2.000–Rp 5.000/pcs.</td>
+          </tr>
+          <tr>
+            <th scope="row">Metode Logistik</th>
+            <td>Ekspedisi reguler terpercaya (JNE, SiCepat, J&amp;T Express).</td>
+            <td class="table-highlight">Layanan kargo darat/laut berbiaya efisien (Indah Kargo, Baraka, Dakota).</td>
+          </tr>
+          <tr>
+            <th scope="row">Sistem Pembayaran</th>
+            <td>Transfer bank sebelum ekspedisi diberangkatkan.</td>
+            <td class="table-highlight">DP 50% saat PO terbit, pelunasan 50% sebelum kargo diberangkatkan.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="process-section">
+      <h3 class="process-title">3 Langkah Praktis Memesan di BambuKita</h3>
+      <div class="process-cards">
+        <div class="process-card reveal">
+          <span class="process-number">01</span>
+          <h4>Pilih Produk &amp; Atur Jumlah</h4>
+          <p>Tentukan item pada katalog, pilih ukuran yang diinginkan, lalu klik tombol tambah ke keranjang pesanan.</p>
+        </div>
+        <div class="process-card reveal" style="--d:.1s">
+          <span class="process-number">02</span>
+          <h4>Konfirmasi Rincian via WhatsApp</h4>
+          <p>Daftar pesanan tersusun rapi secara otomatis. Tim kami menghitung ongkos kargo hemat dan jadwal tiba.</p>
+        </div>
+        <div class="process-card reveal" style="--d:.2s">
+          <span class="process-number">03</span>
+          <h4>Produksi, QC &amp; Pengiriman</h4>
+          <p>Pembayaran diproses, produk melewati inspeksi QC gudang sentral, dan nomor resi kargo diterbitkan.</p>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <a class="btn btn--primary btn--lg" data-wa data-msg="Halo PT Bambu Nusantara Kita, saya ingin memesan peralatan saji bambu untuk usaha kuliner saya." href="#">
+          <i class="bi bi-whatsapp" aria-hidden="true"></i> Pesan Sekarang via WhatsApp
+        </a>
+        <a class="btn btn--outline btn--lg" data-wa data-msg="Halo PT Bambu Nusantara Kita, mohon informasi katalog PDF dan daftar harga grosir B2B terbaru." href="#">
+          <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Unduh PDF Katalog &amp; Pricelist B2B
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq" class="section">
+  <div class="container container--narrow">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Pusat Informasi &amp; Transparansi</span>
+      <h2 class="section-title">Pertanyaan yang Sering Diajukan (FAQ)</h2>
+      <p class="section-lead">
+        Informasi operasional, standar keamanan pangan, legalitas, dan komitmen kemitraan PT Bambu Nusantara Kita.
+      </p>
+    </div>
+    <div id="faqList" class="faq-accordion reveal"></div>
+  </div>
+</section>
+
+<!-- ================= CORPORATE CTA ================= -->
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <span class="badge badge--light"><i class="bi bi-stars" aria-hidden="true"></i> Kemitraan Industri Berkelanjutan</span>
+      <h2>Tingkatkan Standar Penyajian Kuliner Anda Bersama BambuKita</h2>
+      <p>
+        Hadirkan sentuhan otentik Nusantara dan citra ramah lingkungan pada bisnis F&amp;B Anda dengan peralatan dapur anyaman bambu bersertifikasi food-grade langsung dari sentra pengrajin terbaik.
+      </p>
+
+      <div class="cta-dual-grid">
+        <div class="cta-card">
+          <span class="cta-card__icon"><i class="bi bi-shop" aria-hidden="true"></i></span>
+          <h3>Anda Pengrajin Anyaman Desa?</h3>
+          <p>Dapatkan kepastian pasar, standarisasi foto katalog, dan serapan produksi rutin tanpa potongan perantara.</p>
+          <a class="btn btn--light btn--block" href="#konsultasi" data-tab="seller">
+            Konsultasi Kemitraan Pengrajin <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="cta-card">
+          <span class="cta-card__icon"><i class="bi bi-buildings" aria-hidden="true"></i></span>
+          <h3>Anda Pengelola Restoran / Horeka?</h3>
+          <p>Amankan pasokan alat saji bambu konsisten dengan harga grosir pabrik hemat 15–20% dan jaminan garansi kargo.</p>
+          <a class="btn btn--light btn--block" href="#konsultasi" data-tab="buyer">
+            Konsultasi Pengadaan B2B <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="cta-footer-actions">
+        <a class="btn btn--light btn--lg" href="#produk">Lihat Katalog Produk B2B</a>
+        <a class="btn btn--wa btn--lg" data-wa href="#">
+          <i class="bi bi-whatsapp" aria-hidden="true"></i> Hubungi WhatsApp Procurement
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__identity">
+      <a class="brand" href="#beranda">
+        <span class="brand__symbol brand__symbol--footer">
+          <img src="img/logo-icon.png" alt="Logo BambuKita" width="38" height="38">
+        </span>
+        <span class="brand__copy">
+          <span class="brand__name brand__name--light">BAMBUKITA</span>
+          <span class="brand__sub brand__sub--light">PT Bambu Nusantara Kita</span>
+        </span>
+      </a>
+      <p class="footer__about">
+        Perusahaan manufaktur dan agregator pasokan peralatan dapur anyaman bambu bersertifikasi food-grade terkemuka di Indonesia. Menghubungkan keahlian pengrajin desa dengan standar higienis industri kuliner dan perhotelan modern.
+      </p>
+      <div class="footer__cert-tags">
+        <span><i class="bi bi-patch-check" aria-hidden="true"></i> Legalitas Resmi NIB</span>
+        <span><i class="bi bi-shield-check" aria-hidden="true"></i> Food-Grade Alami</span>
+        <span><i class="bi bi-truck" aria-hidden="true"></i> Logistik 34+ Provinsi</span>
+      </div>
+    </div>
+
+    <nav class="footer__nav" aria-label="Navigasi informasi korporasi">
+      <h4>Profil Korporasi</h4>
+      <ul>
+        <li><a href="#beranda">Beranda Utama</a></li>
+        <li><a href="#tentang">Profil Perusahaan</a></li>
+        <li><a href="#kolaborasi">Alur Rantai Pasok</a></li>
+        <li><a href="#produk">Katalog Produk B2B</a></li>
+        <li><a href="#manfaat">Dampak ESG &amp; Sosial</a></li>
+        <li><a href="#faq">Tanya Jawab (FAQ)</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer__nav" aria-label="Navigasi layanan pengadaan">
+      <h4>Layanan Pengadaan</h4>
+      <ul>
+        <li><a href="#konsultasi" data-tab="buyer">Pengadaan Horeka &amp; Resto</a></li>
+        <li><a href="#konsultasi" data-tab="seller">Pendaftaran Mitra Perajin</a></li>
+        <li><a href="#skema">Skema Grosir &amp; Kontrak</a></li>
+        <li><a href="#skema">Custom Logo Cap Bakar</a></li>
+        <li><a href="#produk">Pemesanan Sampel Produk</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer__contact">
+      <h4>Kontak Resmi Procurement</h4>
+      <p>
+        Gedung Operasional &amp; Sentra Kurasi Anyaman Terpadu,<br>
+        Jawa Barat, Indonesia.<br>
+        <span class="footer__hours">Senin – Sabtu: 08.00 – 17.00 WIB</span>
+      </p>
+      <a class="btn btn--wa btn--block" data-wa href="#">
+        <i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp Procurement Resmi
+      </a>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <span>&copy; <span id="year">2026</span> PT Bambu Nusantara Kita (BambuKita). Seluruh hak cipta dilindungi undang-undang.</span>
+    <div class="footer__legal">
+      <a href="#skema">Ketentuan Pengadaan B2B</a>
+      <a href="#faq">Standar Higienitas Kontak Pangan</a>
+      <a href="#skema">Garansi Kerusakan Kargo</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= KERANJANG DRAWER ================= -->
+<div class="overlay" id="overlay" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Keranjang pesanan pengadaan" aria-hidden="true" inert>
+  <header class="drawer__header">
+    <h3><i class="bi bi-bag-check" aria-hidden="true"></i> Keranjang Pesanan B2B</h3>
+    <button class="iconbtn" id="drawerClose" type="button" aria-label="Tutup keranjang pesanan"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+  </header>
+  <div class="drawer__body" id="cartBody"></div>
+  <footer class="drawer__footer" id="cartFoot"></footer>
+</aside>
+
+
+<!-- Floating WhatsApp Action -->
+<a class="wa-float" data-wa href="#" aria-label="Hubungi WhatsApp Procurement PT Bambu Nusantara Kita">
+  <i class="bi bi-whatsapp" aria-hidden="true"></i>
+</a>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
