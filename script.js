@@ -135,14 +135,15 @@ toastEl.addEventListener("click", (e) => {
    ========================================================== */
 const root = document.documentElement;
 const themeBtn = $("#themeBtn");
-function setTheme(t) {
-  root.dataset.theme = t;
-  store.set("bk-theme", t);
-  themeBtn.setAttribute("aria-pressed", t === "dark");
-  $('meta[name="theme-color"]').content = t === "dark" ? "#0e1812" : "#faf8f2";
+function setTheme(t, save = true) {
+  const theme = t === "dark" ? "dark" : "light";
+  root.dataset.theme = theme;
+  if (save) store.set("bk-theme-user", theme);
+  themeBtn.setAttribute("aria-pressed", theme === "dark");
+  $('meta[name="theme-color"]').content = theme === "dark" ? "#0e1812" : "#faf8f2";
 }
-themeBtn.addEventListener("click", () => setTheme(root.dataset.theme === "dark" ? "light" : "dark"));
-setTheme(root.dataset.theme || "light");
+themeBtn.addEventListener("click", () => setTheme(root.dataset.theme === "dark" ? "light" : "dark", true));
+setTheme(root.dataset.theme === "dark" ? "dark" : "light", false);
 
 /* ==========================================================
    Navbar: Menu Mobile, Scroll State, Progress, Spy
@@ -637,31 +638,94 @@ $$("[data-tab]").forEach((a) => a.addEventListener("click", () => selectTab(a.da
 /* ==========================================================
    Formulir Konsultasi -> WhatsApp Generator
    ========================================================== */
-$$("form.form").forEach((form) => {
+$$("form.consult-form").forEach((form) => {
   form.addEventListener("input", (e) => e.target.classList.remove("invalid"));
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const bad = $$("input,textarea", form).filter((el) => !el.checkValidity());
     $$("input,textarea", form).forEach((el) => el.classList.toggle("invalid", bad.includes(el)));
-    if (bad.length) { bad[0].focus(); toast("Harap lengkapi kolom yang ditandai", "bi-exclamation-circle-fill"); return; }
+    if (bad.length) {
+      bad[0].focus();
+      toast("Harap lengkapi kolom yang wajib diisi", "bi-exclamation-circle-fill");
+      return;
+    }
+
     const d = Object.fromEntries(new FormData(form).entries());
     const peran = form.dataset.role;
-    const lines = [
-      `Halo PT Bambu Nusantara Kita, saya ingin berkonsultasi mengenai kemitraan sebagai ${peran === "Pengerajin" ? "Mitra Pengrajin Desa" : "Klien Pembeli / Industri Horeka"}.`,
-      "",
-      `Nama Pemohon/PIC: ${d.nama}`,
-      d.kelompok ? `Kelompok Anyam / UMKM: ${d.kelompok}` : null,
-      d.usaha ? `Perusahaan / Restoran: ${d.usaha}` : null,
-      `Kota Asal / Tujuan: ${d.asal}`,
-      `Kebutuhan Produk: ${d.produk}`,
-      d.kapasitas ? (peran === "Pengerajin" ? `Kapasitas Produksi: ${d.kapasitas}` : `Perkiraan Volume Unit: ${d.kapasitas}`) : null,
-      `Nomor WhatsApp: ${d.wa}`,
-      d.cerita ? `Catatan Tambahan: ${d.cerita}` : null,
-      "",
-      "Mohon arahan dan informasi penawaran lebih lanjut. Terima kasih."
-    ].filter(Boolean);
-    window.open(waLink(lines.join("\n")), "_blank", "noopener");
-    toast("Membuka WhatsApp Procurement…", "bi-whatsapp");
+    let lines = [];
+
+    if (peran === "Pengerajin") {
+      lines = [
+        "🌿 *FORMULIR PENDAFTARAN MITRA PENGRAJIN DESA*",
+        "🏢 *PT Bambu Nusantara Kita*",
+        "──────────────────────────────",
+        "Halo Tim Kemitraan BambuKita,",
+        "Saya ingin mendaftar sebagai Mitra Pengrajin Desa dengan rincian data formulir berikut:",
+        "",
+        `• *Nama Lengkap:* ${d.nama || "-"}`,
+        d.kelompok ? `• *Kelompok Anyam / UMKM:* ${d.kelompok}` : null,
+        `• *Desa & Kota Asal:* ${d.asal || "-"}`,
+        `• *Jenis Kerajinan Bambu:* ${d.produk || "-"}`,
+        d.kapasitas ? `• *Kapasitas Produksi per Bulan:* ${d.kapasitas}` : null,
+        `• *Nomor WhatsApp Aktif:* ${d.wa || "-"}`,
+        d.cerita ? `• *Deskripsi Singkat & Kebutuhan Dukungan:*\n  ${d.cerita}` : null,
+        "",
+        "──────────────────────────────",
+        "Mohon arahan dan informasi tindak lanjut kemitraan ini. Terima kasih!"
+      ];
+    } else {
+      lines = [
+        "📋 *FORMULIR PENGADAAN KLIEN BISNIS (B2B)*",
+        "🏢 *PT Bambu Nusantara Kita*",
+        "──────────────────────────────",
+        "Halo Tim Procurement & Kemitraan BambuKita,",
+        "Saya mengajukan permintaan penawaran pengadaan alat saji bambu untuk usaha kami:",
+        "",
+        `• *Nama Lengkap PIC:* ${d.nama || "-"}`,
+        d.usaha ? `• *Perusahaan / Restoran / Brand:* ${d.usaha}` : null,
+        `• *Kota Tujuan Pengiriman:* ${d.asal || "-"}`,
+        `• *Produk Bambu yang Dicari:* ${d.produk || "-"}`,
+        d.kapasitas ? `• *Perkiraan Volume Pengadaan:* ${d.kapasitas}` : null,
+        `• *Nomor WhatsApp PIC:* ${d.wa || "-"}`,
+        d.cerita ? `• *Spesifikasi Khusus / Kebutuhan Tambahan:*\n  ${d.cerita}` : null,
+        "",
+        "──────────────────────────────",
+        "Mohon informasi ketersediaan sampel fisik dan surat penawaran harga resmi (B2B). Terima kasih!"
+      ];
+    }
+
+    const cleanLines = lines.filter((l) => l !== null);
+    window.open(waLink(cleanLines.join("\n")), "_blank", "noopener");
+    toast(peran === "Pengerajin" ? "Membuka WhatsApp Tim Kemitraan…" : "Membuka WhatsApp Procurement B2B…", "bi-whatsapp");
+  });
+});
+
+/* ==========================================================
+   Tab Switcher Perbandingan Skema (Mobile)
+   ========================================================== */
+$$("[data-skema-tab]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const target = btn.dataset.skemaTab;
+    $$("[data-skema-tab]").forEach((b) => {
+      const active = b === btn;
+      b.classList.toggle("is-active", active);
+      b.setAttribute("aria-selected", active ? "true" : "false");
+    });
+    const cardB2B = document.getElementById("skema-card-b2b");
+    const cardEceran = document.getElementById("skema-card-eceran");
+    if (cardB2B && cardEceran) {
+      if (target === "b2b") {
+        cardB2B.hidden = false;
+        cardB2B.classList.add("is-active");
+        cardEceran.hidden = true;
+        cardEceran.classList.remove("is-active");
+      } else {
+        cardB2B.hidden = true;
+        cardB2B.classList.remove("is-active");
+        cardEceran.hidden = false;
+        cardEceran.classList.add("is-active");
+      }
+    }
   });
 });
 
